@@ -1,0 +1,206 @@
+body{
+	padding:0;
+	margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    color: #000;
+ }
+p{
+  padding: 0;
+  margin:0;
+}
+ .makeitzero{
+    padding: 0;
+    margin:0;
+ }
+div{
+	margin:0;
+	padding: 0;
+}
+.row{
+	padding:0;
+	margin: 0;
+}
+.border1px{
+	border:1px solid black;
+}
+.accountDiv{
+	border: 4px solid #f8f7b6;
+	background-color: #fcfbb4;
+	height: 300px;
+	width: 250px;
+	position: fixed;
+	top: 50%;
+  word-wrap:break-word;
+	left: 80%;
+}
+.circleBase {
+    border-radius: 50%;
+    color: #fff;
+}
+.type1 {
+    width: 50px;
+    height: 50px;
+    background: #42454a;
+}
+.tableInside{
+	text-align: center;
+	padding-top: 8px;
+	position: relative;
+}
+.tableNo ul{
+	list-style: none;
+}
+.tableNo ul li{
+	display: inline-block;
+}
+.Gallery ul{
+	list-style: none;
+	padding:0;
+	margin:0;
+}
+.Gallery ul li{
+	width: 310px;
+	display: inline-block;
+	margin: 0 10px 20px 0;
+}
+.imageDiv {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+.image {
+  display: block;
+  	height: 200px;
+	width: 100%;
+	padding: 0;
+	margin:0;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0%;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 140, 186, 0.6);
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
+}
+.imageDiv:hover .overlay {
+  bottom: 0;
+  height: 30%;
+}
+
+.text {
+  white-space: nowrap; 
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.foodDetails{
+	margin:10px 0 20px 0;
+}
+.foodTable tr:first-child{
+  border-top: 2px solid black;
+  display: none;
+}
+.itemBox{
+  max-height: 210px;
+  overflow: auto;
+}
+.this{
+  height: 200px;
+  width: 200px;
+  border: 1px solid black;
+    position: relative;
+  cursor: pointer;
+}
+.abcd{
+display: none;
+}
+.this:hover .abcd{
+display: block;
+}
+.menuPage{
+  
+  width: 50%;
+}
+.noticeBox{
+  background-color: #eeeeee;
+  width: 100%;
+  padding:20px 10px;
+  margin-bottom: 10px; 
+  border-radius: 5px;
+}
+.menuRenderDiv{
+  
+}
+.border1px{
+  border: 1px solid black;
+}
+.catDiv{
+  padding:10px;
+  border-radius:3px;
+  background-color: #eeeeee;
+  margin: 5px 0;
+}
+.hideMe{
+  z-index: -999;
+}
+.hideMe1{
+  z-index: -999;
+}
+.catDiv:hover .hideMe{
+  z-index: 999;
+}
+.foodItemDiv:hover .hideMe1{
+  z-index: 999;
+}
+.mainContainer{
+  margin-top: 50px;
+}
+.foodBox{
+  clear: both;
+  width: 90%;
+  float: right;
+}
+.foodCatDiv{
+  overflow: auto;
+  margin-bottom: 10px;
+}
+.checkit{
+  border: 1px solid black;
+}
+.foodFormDiv{
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding:10px;
+  margin-bottom: 10px;
+}
+.foodItemDiv{
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+  width: 100%;
+  padding:10px;
+  margin: 10px 0;
+}
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active for <2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
