@@ -21,9 +21,16 @@ Route::get('/admin', function () {
 
 Route::get('/', function(){
 	return view('Order');
-});	
+});
 
 
 // Apis
 Route::resource('/foodcategory', 'foodCategoryController');
 Route::resource('/food', 'foodController');
+Route::get('/register', function (){
+    return view('layouts/register');
+});
+Route::post('/register/ok', 'registerController@store');
+Route::get('/login', function (){
+    return view('layouts/login');
+});
