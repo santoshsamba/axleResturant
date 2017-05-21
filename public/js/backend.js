@@ -23002,6 +23002,7 @@ var AdminMenu = Vue.component('adminmenu', __webpack_require__(56));
 var Dashboard = Vue.component('dashboard', __webpack_require__(57));
 var LeftMenu = Vue.component('leftmenu', __webpack_require__(58));
 var AddRole = Vue.component('addrole', __webpack_require__(55));
+var HeaderName = Vue.component('contentheader', __webpack_require__(83));
 
 //end of components
 
@@ -23899,13 +23900,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contentHeader__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contentHeader___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__contentHeader__);
+//
+//
+//
 //
 //
 //
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+	component: [__WEBPACK_IMPORTED_MODULE_0__contentHeader___default.a],
+	data: function data() {
+		return {
+			contentTitle: 'Roles'
+		};
+	},
 	mounted: function mounted() {
 		console.log('Component mounted.');
 	}
@@ -44118,7 +44131,13 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_vm._v("\n\tRoles\n")])
+  return _c('div', [_c('contentheader', {
+    attrs: {
+      "headName": _vm.contentTitle
+    }
+  }), _vm._v(" "), _c('section', {
+    staticClass: "content"
+  }, [_vm._v("\n            this is role part\n        ")])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -46204,6 +46223,102 @@ module.exports = function(module) {
 
 module.exports = __webpack_require__(18);
 
+
+/***/ }),
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	props: ['headName'],
+	data: function data() {
+		return {};
+	}
+});
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(82),
+  /* template */
+  __webpack_require__(84),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\backend\\contentHeader.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] contentHeader.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-10758066", Component.options)
+  } else {
+    hotAPI.reload("data-v-10758066", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', {
+    staticClass: "content-header"
+  }, [_c('h1', [_vm._v("\n    \t" + _vm._s(_vm.headName) + "\n    ")]), _vm._v(" "), _vm._m(0)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('ol', {
+    staticClass: "breadcrumb"
+  }, [_c('li', [_c('a', {
+    attrs: {
+      "href": "#"
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-dashboard"
+  }), _vm._v("Home")])]), _vm._v(" "), _c('li', {
+    staticClass: "active"
+  }, [_vm._v("Dashboard")])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-10758066", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
