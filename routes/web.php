@@ -15,6 +15,9 @@ Route::get('/admin', function () {
             return view('layouts/main');
         })->where('vue_capture', '[\/\w\.-]*');
 
+Route::get('{path}', function () {
+    return view('layouts/main');
+})->where( 'path', '([A-z\d-\/_.]+)?' );
 // Route::get('/', function () {
 //             return view('Order');
 //         })->where('vue_capture', '[\/\w\.-]*');

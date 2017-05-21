@@ -204,3 +204,26 @@ display: block;
   transform: translateX(10px);
   opacity: 0;
 }
+.main-header{
+  background-color: #ccc;
+}
+.settingBox{
+  padding: 10px 15px;
+  background-color: #1a2226; 
+}
+.SideMenuUl{
+  list-style: none;
+  padding: 0;
+}
+.SideMenuUl li{
+}
+.SideMenuUl li a{
+  display: block;
+  height: 100%;
+  width: 100%;
+  color: #eeeeee;
+  padding: 10px 15px;
+}
+.SideMenuUl li:hover{
+  background-color: #1b2529;
+}

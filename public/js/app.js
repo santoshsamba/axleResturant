@@ -63,12 +63,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 63);
+/******/ 	return __webpack_require__(__webpack_require__.s = 72);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */,
-/* 1 */
+/* 0 */
 /***/ (function(module, exports) {
 
 // this module is a runtime utility for cleaner component module output and will
@@ -125,6 +124,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
+/* 1 */,
 /* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -11984,7 +11984,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(6),
   /* template */
@@ -11994,7 +11994,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\resturant\\resources\\assets\\js\\components\\Example.vue"
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\Example.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -12005,9 +12005,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5c2805dc", Component.options)
+    hotAPI.createRecord("data-v-57501eec", Component.options)
   } else {
-    hotAPI.reload("data-v-5c2805dc", Component.options)
+    hotAPI.reload("data-v-57501eec", Component.options)
   }
 })()}
 
@@ -12039,7 +12039,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-5c2805dc", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-57501eec", module.exports)
   }
 }
 
@@ -12053,17 +12053,17 @@ if (false) {
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(40),
   /* template */
-  __webpack_require__(58),
+  __webpack_require__(67),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\resturant\\resources\\assets\\js\\components\\account.vue"
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\account.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] account.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -12074,9 +12074,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-bfa68582", Component.options)
+    hotAPI.createRecord("data-v-c9565362", Component.options)
   } else {
-    hotAPI.reload("data-v-bfa68582", Component.options)
+    hotAPI.reload("data-v-c9565362", Component.options)
   }
 })()}
 
@@ -12087,17 +12087,17 @@ module.exports = Component.exports
 /* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(41),
   /* template */
-  __webpack_require__(56),
+  __webpack_require__(65),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\resturant\\resources\\assets\\js\\components\\apetizer.vue"
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\apetizer.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] apetizer.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -12108,9 +12108,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4932909a", Component.options)
+    hotAPI.createRecord("data-v-99e4ccec", Component.options)
   } else {
-    hotAPI.reload("data-v-4932909a", Component.options)
+    hotAPI.reload("data-v-99e4ccec", Component.options)
   }
 })()}
 
@@ -12154,10 +12154,10 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]);
 // const AddFoodCategory = Vue.component('foodcategory', require('./components/backend/addFoodCat.vue'));
 var Example = Vue.component('example', __webpack_require__(7));
 var Apetizer = Vue.component('compapetizer', __webpack_require__(16));
-var Babrage = Vue.component('comp-babrage', __webpack_require__(50));
-var MainCourse = Vue.component('comp-mainCourse', __webpack_require__(53));
-var CategoryMenu = Vue.component('compcategory', __webpack_require__(48));
-var Menu = Vue.component('compmenu', __webpack_require__(49));
+var Babrage = Vue.component('comp-babrage', __webpack_require__(53));
+var MainCourse = Vue.component('comp-mainCourse', __webpack_require__(59));
+var CategoryMenu = Vue.component('compcategory', __webpack_require__(51));
+var Menu = Vue.component('compmenu', __webpack_require__(52));
 var Account = Vue.component('comp-account', __webpack_require__(15));
 
 //end of components
@@ -12517,20 +12517,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 45 */,
 /* 46 */,
 /* 47 */,
-/* 48 */
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(38),
   /* template */
-  __webpack_require__(55),
+  __webpack_require__(63),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\resturant\\resources\\assets\\js\\components\\CategoryMenu.vue"
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\CategoryMenu.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CategoryMenu.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -12541,9 +12544,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-28b3160a", Component.options)
+    hotAPI.createRecord("data-v-6df385eb", Component.options)
   } else {
-    hotAPI.reload("data-v-28b3160a", Component.options)
+    hotAPI.reload("data-v-6df385eb", Component.options)
   }
 })()}
 
@@ -12551,20 +12554,20 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 49 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(39),
   /* template */
-  __webpack_require__(54),
+  __webpack_require__(68),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\resturant\\resources\\assets\\js\\components\\Menu.vue"
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\Menu.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Menu.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -12575,9 +12578,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0e01f7dd", Component.options)
+    hotAPI.createRecord("data-v-f5b20e66", Component.options)
   } else {
-    hotAPI.reload("data-v-0e01f7dd", Component.options)
+    hotAPI.reload("data-v-f5b20e66", Component.options)
   }
 })()}
 
@@ -12585,32 +12588,10 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 50 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(1)(
-  /* script */
-  null,
-  /* template */
-  null,
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "C:\\xampp\\htdocs\\resturant\\resources\\assets\\js\\components\\babrage.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 51 */,
-/* 52 */,
 /* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
@@ -12620,14 +12601,185 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\resturant\\resources\\assets\\js\\components\\maincourse.vue"
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\babrage.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 
 module.exports = Component.exports
 
 
 /***/ }),
-/* 54 */
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  null,
+  /* template */
+  null,
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\maincourse.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "tableNo"
+  }, [_vm._m(0), _vm._v(" "), _c('router-view')], 1)])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('ul', [_c('li', [_c('div', {
+    staticClass: "circleBase type1"
+  }, [_c('div', {
+    staticClass: "tableInside"
+  }, [_c('div', {
+    staticStyle: {
+      "padding": "0",
+      "margin": "0",
+      "font-size": "24px"
+    }
+  }, [_vm._v("1")]), _vm._v(" "), _c('br')])])]), _vm._v(" "), _c('li', [_c('div', {
+    staticClass: "circleBase type1"
+  }, [_c('div', {
+    staticClass: "tableInside"
+  }, [_c('div', {
+    staticStyle: {
+      "padding": "0",
+      "margin": "0",
+      "font-size": "24px"
+    }
+  }, [_vm._v("2")]), _vm._v(" "), _c('br')])])]), _vm._v(" "), _c('li', [_c('div', {
+    staticClass: "circleBase type1"
+  }, [_c('div', {
+    staticClass: "tableInside"
+  }, [_c('div', {
+    staticStyle: {
+      "padding": "0",
+      "margin": "0",
+      "font-size": "24px"
+    }
+  }, [_vm._v("3")]), _vm._v(" "), _c('br')])])])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-6df385eb", module.exports)
+  }
+}
+
+/***/ }),
+/* 64 */,
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-md-12"
+  }, [_c('h3', [_vm._v("Apetizer")]), _vm._v(" "), _c('div', {
+    staticClass: "Gallery"
+  }, [_c('ul', _vm._l((_vm.ApetizerData), function(item) {
+    return _c('li', [_c('div', {
+      staticClass: "imageDiv"
+    }, [_c('img', {
+      staticClass: "image",
+      attrs: {
+        "src": item.foodImage,
+        "alt": "Avatar"
+      }
+    }), _vm._v(" "), _c('div', {
+      staticClass: "overlay"
+    }, [_c('div', {
+      staticClass: "text"
+    }, [_vm._m(0, true), _vm._v(" "), _c('div', {
+      staticClass: "col-md-6"
+    }, [_c('input', {
+      staticClass: "btn btn-primary",
+      attrs: {
+        "type": "button",
+        "value": "Add"
+      },
+      on: {
+        "click": function($event) {
+          _vm.addMenuDetails()
+        }
+      }
+    })])])]), _vm._v(" "), _c('div', {
+      staticClass: "foodDetails"
+    }, [_c('div', {
+      staticClass: "col-md-6"
+    }, [_vm._v("\r\n                                    " + _vm._s(item.foodName) + "\r\n                                    "), _c('input', {
+      attrs: {
+        "type": "hidden"
+      },
+      domProps: {
+        "value": item.foodId
+      }
+    })]), _vm._v(" "), _c('div', {
+      staticClass: "col-md-6"
+    }, [_vm._v("\r\n                                    Price : Rs " + _vm._s(item.foodPrice) + "\r\n                                    ")])])])])
+  }))])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-md-6"
+  }, [_c('input', {
+    staticClass: "btn btn-primary",
+    attrs: {
+      "type": "button",
+      "value": "Cut"
+    }
+  })])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-99e4ccec", module.exports)
+  }
+}
+
+/***/ }),
+/* 66 */,
+/* 67 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "accountDiv"
+  }, [_vm._v("\r\n    Table No :\r\n    "), _vm._l((_vm.roughData), function(item) {
+    return _c('div', [_c('label', [_vm._v(_vm._s(item.first))])])
+  })], 2)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-c9565362", module.exports)
+  }
+}
+
+/***/ }),
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -12718,158 +12870,15 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-0e01f7dd", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-f5b20e66", module.exports)
   }
 }
 
 /***/ }),
-/* 55 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "tableNo"
-  }, [_vm._m(0), _vm._v(" "), _c('router-view')], 1)])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('ul', [_c('li', [_c('div', {
-    staticClass: "circleBase type1"
-  }, [_c('div', {
-    staticClass: "tableInside"
-  }, [_c('div', {
-    staticStyle: {
-      "padding": "0",
-      "margin": "0",
-      "font-size": "24px"
-    }
-  }, [_vm._v("1")]), _vm._v(" "), _c('br')])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "circleBase type1"
-  }, [_c('div', {
-    staticClass: "tableInside"
-  }, [_c('div', {
-    staticStyle: {
-      "padding": "0",
-      "margin": "0",
-      "font-size": "24px"
-    }
-  }, [_vm._v("2")]), _vm._v(" "), _c('br')])])]), _vm._v(" "), _c('li', [_c('div', {
-    staticClass: "circleBase type1"
-  }, [_c('div', {
-    staticClass: "tableInside"
-  }, [_c('div', {
-    staticStyle: {
-      "padding": "0",
-      "margin": "0",
-      "font-size": "24px"
-    }
-  }, [_vm._v("3")]), _vm._v(" "), _c('br')])])])])
-}]}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-28b3160a", module.exports)
-  }
-}
-
-/***/ }),
-/* 56 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-md-12"
-  }, [_c('h3', [_vm._v("Apetizer")]), _vm._v(" "), _c('div', {
-    staticClass: "Gallery"
-  }, [_c('ul', _vm._l((_vm.ApetizerData), function(item) {
-    return _c('li', [_c('div', {
-      staticClass: "imageDiv"
-    }, [_c('img', {
-      staticClass: "image",
-      attrs: {
-        "src": item.foodImage,
-        "alt": "Avatar"
-      }
-    }), _vm._v(" "), _c('div', {
-      staticClass: "overlay"
-    }, [_c('div', {
-      staticClass: "text"
-    }, [_vm._m(0, true), _vm._v(" "), _c('div', {
-      staticClass: "col-md-6"
-    }, [_c('input', {
-      staticClass: "btn btn-primary",
-      attrs: {
-        "type": "button",
-        "value": "Add"
-      },
-      on: {
-        "click": function($event) {
-          _vm.addMenuDetails()
-        }
-      }
-    })])])]), _vm._v(" "), _c('div', {
-      staticClass: "foodDetails"
-    }, [_c('div', {
-      staticClass: "col-md-6"
-    }, [_vm._v("\r\n                                    " + _vm._s(item.foodName) + "\r\n                                    "), _c('input', {
-      attrs: {
-        "type": "hidden"
-      },
-      domProps: {
-        "value": item.foodId
-      }
-    })]), _vm._v(" "), _c('div', {
-      staticClass: "col-md-6"
-    }, [_vm._v("\r\n                                    Price : Rs " + _vm._s(item.foodPrice) + "\r\n                                    ")])])])])
-  }))])])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-md-6"
-  }, [_c('input', {
-    staticClass: "btn btn-primary",
-    attrs: {
-      "type": "button",
-      "value": "Cut"
-    }
-  })])
-}]}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-4932909a", module.exports)
-  }
-}
-
-/***/ }),
-/* 57 */,
-/* 58 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "accountDiv"
-  }, [_vm._v("\r\n    Table No :\r\n    "), _vm._l((_vm.roughData), function(item) {
-    return _c('div', [_c('label', [_vm._v(_vm._s(item.first))])])
-  })], 2)
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-bfa68582", module.exports)
-  }
-}
-
-/***/ }),
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(17);
