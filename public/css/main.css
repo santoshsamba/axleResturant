@@ -5,9 +5,12 @@ body{
     font-weight: 100;
     color: #000;
  }
-p{
+p, h1, h2, h3, h4, h5{
   padding: 0;
   margin:0;
+}
+a{
+  color: #333;
 }
  .makeitzero{
     padding: 0;
@@ -226,4 +229,46 @@ display: block;
 }
 .SideMenuUl li:hover{
   background-color: #1b2529;
+}
+.tabContent{
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 3px
+}
+.tabDiv{
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+.tabDiv ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.tabDiv ul li{
+  display: inline-block;
+}
+.tabDiv ul li a{
+  padding: 15px 25px;
+  display: block;
+  font-size: 16px;
+}
+.tabDiv ul li a:hover{
+  color: #ccc;
+}
+.form-div{
+  margin-top: 30px;
+}
+.formLabel{
+  font-size: 16px;  
+}
+.roleActive{
+  border-top: 3px solid #ab120d;
+}
+.btnLength{
+  padding-left: 30px;
+  padding-right: 30px;
 }

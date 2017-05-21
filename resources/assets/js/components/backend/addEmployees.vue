@@ -4,18 +4,9 @@
     <section class="content">
         <roletabs></roletabs>
         <div class="tabContent">
-	        <h2> Add Role </h2>
+	        <h2> Add Employees </h2>
 	    	<div class="form-div">
-	    		<form @submit.prevent="test()">
-	    			<div class="form-group">
-	    				<label class="formLabel">Role Name</label>
-	    				<input type="text" name="" placeholder="Enter Role Name" class="form-control input-lg">
-	    			</div>
-	    			<div class="form-group">
-	    				<button type="submit" name="" class="btn btn-primary btn-lg btnLength"><i class="fa fa-save"></i><span> save</span></button>
-	    			</div>
-
-	    		</form>
+	    		Create Form Here
 	    	</div>
     	</div>
     </section> 
@@ -28,7 +19,7 @@ import roleTabs from './roleTabs'
 	 	component: [headerComp,roleTabs],
 	 	data(){
 	 		return{
-	 			contentTitle: 'Roles'
+	 			contentTitle: 'Employees'
 	 		}
 	 	},
 		mounted() {

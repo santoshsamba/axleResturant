@@ -23001,8 +23001,12 @@ var Example = Vue.component('foodcategory', __webpack_require__(7));
 var AdminMenu = Vue.component('adminmenu', __webpack_require__(56));
 var Dashboard = Vue.component('dashboard', __webpack_require__(57));
 var LeftMenu = Vue.component('leftmenu', __webpack_require__(58));
-var AddRole = Vue.component('addrole', __webpack_require__(55));
+var Role = Vue.component('role', __webpack_require__(89));
 var HeaderName = Vue.component('contentheader', __webpack_require__(83));
+var RoleTabs = Vue.component('roletabs', __webpack_require__(86));
+var AddRole = Vue.component('addrole', __webpack_require__(55));
+var AddEmployees = Vue.component('addemployees', __webpack_require__(92));
+var RoleMapping = Vue.component('rolemapping', __webpack_require__(94));
 
 //end of components
 
@@ -23012,7 +23016,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
     mode: 'history',
     hashbang: false,
     linkActiveClass: 'active',
-    routes: [{ path: '/admin/menu', component: Example }, { path: '/admin/dashboard', component: Dashboard }, { path: '/admin/addrole', component: AddRole }]
+    routes: [{ path: '/admin/menu', component: Example }, { path: '/admin/dashboard', component: Dashboard }, { path: '/admin/role', component: Role }, { path: '/admin/role/addrole', component: AddRole }, { path: '/admin/role/addemployees', component: AddEmployees }, { path: '/admin/role/rolemapping', component: RoleMapping }]
 });
 //end of routers
 var backend = new Vue({
@@ -23902,6 +23906,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contentHeader__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contentHeader___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__contentHeader__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__roleTabs__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__roleTabs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__roleTabs__);
 //
 //
 //
@@ -23910,10 +23916,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	component: [__WEBPACK_IMPORTED_MODULE_0__contentHeader___default.a],
+	component: [__WEBPACK_IMPORTED_MODULE_0__contentHeader___default.a, __WEBPACK_IMPORTED_MODULE_1__roleTabs___default.a],
 	data: function data() {
 		return {
 			contentTitle: 'Roles'
@@ -23921,6 +23943,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	},
 	mounted: function mounted() {
 		console.log('Component mounted.');
+	},
+
+	methods: {
+		test: function test() {
+			alert("tbus");
+		}
 	}
 });
 
@@ -44137,8 +44165,44 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('section', {
     staticClass: "content"
-  }, [_vm._v("\n            this is role part\n        ")])], 1)
-},staticRenderFns: []}
+  }, [_c('roletabs'), _vm._v(" "), _c('div', {
+    staticClass: "tabContent"
+  }, [_c('h2', [_vm._v(" Add Role ")]), _vm._v(" "), _c('div', {
+    staticClass: "form-div"
+  }, [_c('form', {
+    on: {
+      "submit": function($event) {
+        $event.preventDefault();
+        _vm.test()
+      }
+    }
+  }, [_vm._m(0), _vm._v(" "), _vm._m(1)])])])], 1)], 1)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    staticClass: "formLabel"
+  }, [_vm._v("Role Name")]), _vm._v(" "), _c('input', {
+    staticClass: "form-control input-lg",
+    attrs: {
+      "type": "text",
+      "name": "",
+      "placeholder": "Enter Role Name"
+    }
+  })])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "form-group"
+  }, [_c('button', {
+    staticClass: "btn btn-primary btn-lg btnLength",
+    attrs: {
+      "type": "submit",
+      "name": ""
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-save"
+  }), _c('span', [_vm._v(" save")])])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -44158,7 +44222,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "SideMenuUl"
   }, [_c('router-link', {
     attrs: {
-      "to": "/admin/addrole",
+      "to": "/admin/role",
       "tag": "li"
     }
   }, [_c('a', [_c('i', {
@@ -46317,6 +46381,405 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
      require("vue-hot-reload-api").rerender("data-v-10758066", module.exports)
+  }
+}
+
+/***/ }),
+/* 85 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+		return {};
+	}
+});
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(85),
+  /* template */
+  __webpack_require__(87),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\backend\\roleTabs.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] roleTabs.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-698f1706", Component.options)
+  } else {
+    hotAPI.reload("data-v-698f1706", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('div', {
+    staticClass: "tabDiv"
+  }, [_c('ul', {}, [_c('router-link', {
+    staticClass: "roleActive",
+    attrs: {
+      "to": "/admin/role/addrole",
+      "tag": "li"
+    }
+  }, [_c('a', [_vm._v("Role")])]), _vm._v(" "), _c('router-link', {
+    attrs: {
+      "to": "/admin/role/addemployees",
+      "tag": "li"
+    }
+  }, [_c('a', [_vm._v("User")])]), _vm._v(" "), _c('router-link', {
+    attrs: {
+      "to": "/admin/role/rolemapping",
+      "tag": "li"
+    }
+  }, [_c('a', [_vm._v("Role Mapping")])])], 1)]), _vm._v(" "), _c('router-view')], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-698f1706", module.exports)
+  }
+}
+
+/***/ }),
+/* 88 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contentHeader__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contentHeader___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__contentHeader__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__roleTabs__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__roleTabs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__roleTabs__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	component: [__WEBPACK_IMPORTED_MODULE_0__contentHeader___default.a, __WEBPACK_IMPORTED_MODULE_1__roleTabs___default.a],
+	data: function data() {
+		return {
+			contentTitle: 'Roles'
+		};
+	},
+	mounted: function mounted() {
+		console.log('Component mounted.');
+	}
+});
+
+/***/ }),
+/* 89 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(88),
+  /* template */
+  __webpack_require__(90),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\backend\\Role.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Role.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-e40c2902", Component.options)
+  } else {
+    hotAPI.reload("data-v-e40c2902", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 90 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('contentheader', {
+    attrs: {
+      "headName": _vm.contentTitle
+    }
+  }), _vm._v(" "), _c('section', {
+    staticClass: "content"
+  }, [_c('roletabs')], 1)], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-e40c2902", module.exports)
+  }
+}
+
+/***/ }),
+/* 91 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contentHeader__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contentHeader___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__contentHeader__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__roleTabs__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__roleTabs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__roleTabs__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	component: [__WEBPACK_IMPORTED_MODULE_0__contentHeader___default.a, __WEBPACK_IMPORTED_MODULE_1__roleTabs___default.a],
+	data: function data() {
+		return {
+			contentTitle: 'Employees'
+		};
+	},
+	mounted: function mounted() {
+		console.log('Component mounted.');
+	},
+
+	methods: {
+		test: function test() {
+			alert("tbus");
+		}
+	}
+});
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(91),
+  /* template */
+  __webpack_require__(93),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\backend\\addEmployees.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] addEmployees.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-b1c70a66", Component.options)
+  } else {
+    hotAPI.reload("data-v-b1c70a66", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('contentheader', {
+    attrs: {
+      "headName": _vm.contentTitle
+    }
+  }), _vm._v(" "), _c('section', {
+    staticClass: "content"
+  }, [_c('roletabs'), _vm._v(" "), _vm._m(0)], 1)], 1)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "tabContent"
+  }, [_c('h2', [_vm._v(" Add Employees ")]), _vm._v(" "), _c('div', {
+    staticClass: "form-div"
+  }, [_vm._v("\r\n\t    \t\tCreate Form Here\r\n\t    \t")])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-b1c70a66", module.exports)
+  }
+}
+
+/***/ }),
+/* 94 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(95),
+  /* template */
+  __webpack_require__(96),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\backend\\roleMapping.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] roleMapping.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-19bc2cc2", Component.options)
+  } else {
+    hotAPI.reload("data-v-19bc2cc2", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 95 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contentHeader__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contentHeader___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__contentHeader__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__roleTabs__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__roleTabs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__roleTabs__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	component: [__WEBPACK_IMPORTED_MODULE_0__contentHeader___default.a, __WEBPACK_IMPORTED_MODULE_1__roleTabs___default.a],
+	data: function data() {
+		return {
+			contentTitle: 'Employees'
+		};
+	},
+	mounted: function mounted() {
+		console.log('Component mounted.');
+	},
+
+	methods: {
+		test: function test() {
+			alert("tbus");
+		}
+	}
+});
+
+/***/ }),
+/* 96 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('contentheader', {
+    attrs: {
+      "headName": _vm.contentTitle
+    }
+  }), _vm._v(" "), _c('section', {
+    staticClass: "content"
+  }, [_c('roletabs'), _vm._v(" "), _vm._m(0)], 1)], 1)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "tabContent"
+  }, [_c('h2', [_vm._v(" Add Employees ")]), _vm._v(" "), _c('div', {
+    staticClass: "form-div"
+  }, [_vm._v("\r\n\t    \t\tCreate Role Mapping Form Here\r\n\t    \t")])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-19bc2cc2", module.exports)
   }
 }
 
