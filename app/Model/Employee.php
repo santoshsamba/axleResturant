@@ -6,7 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Employee extends Model
 {
-    public function roles(){
-    return $this->belongsToMany('App\Model\Role');
-}
+	protected $fillable = [
+							'firstName',
+							'lastName',
+							'email', 
+							'username', 
+							'password', 
+							'phone', 
+							'address', 
+							'gender', 
+							'status'
+							];
+							
+	protected $table = "employees";
+
+	// roles and employees
+	public function roles(){
+    	return $this->belongsToMany('App\Model\Role');
+	}
 }

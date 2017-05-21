@@ -63,11 +63,68 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 64);
+/******/ 	return __webpack_require__(__webpack_require__.s = 73);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports) {
+
+// this module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  scopeId,
+  cssModules
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  // inject cssModules
+  if (cssModules) {
+    var computed = Object.create(options.computed || null)
+    Object.keys(cssModules).forEach(function (key) {
+      var module = cssModules[key]
+      computed[key] = function () { return module }
+    })
+    options.computed = computed
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -370,63 +427,6 @@ module.exports = {
   extend: extend,
   trim: trim
 };
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-// this module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle
-
-module.exports = function normalizeComponent (
-  rawScriptExports,
-  compiledTemplate,
-  scopeId,
-  cssModules
-) {
-  var esModule
-  var scriptExports = rawScriptExports = rawScriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof rawScriptExports.default
-  if (type === 'object' || type === 'function') {
-    esModule = rawScriptExports
-    scriptExports = rawScriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (compiledTemplate) {
-    options.render = compiledTemplate.render
-    options.staticRenderFns = compiledTemplate.staticRenderFns
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  // inject cssModules
-  if (cssModules) {
-    var computed = Object.create(options.computed || null)
-    Object.keys(cssModules).forEach(function (key) {
-      var module = cssModules[key]
-      computed[key] = function () { return module }
-    })
-    options.computed = computed
-  }
-
-  return {
-    esModule: esModule,
-    exports: scriptExports,
-    options: options
-  }
-}
 
 
 /***/ }),
@@ -12262,7 +12262,7 @@ module.exports = g;
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 var normalizeHeaderName = __webpack_require__(35);
 
 var PROTECTION_PREFIX = /^\)\]\}',?\n/;
@@ -12354,7 +12354,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(47)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(50)))
 
 /***/ }),
 /* 6 */
@@ -12389,7 +12389,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(6),
   /* template */
@@ -12399,7 +12399,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\resturant\\resources\\assets\\js\\components\\Example.vue"
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\Example.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -12410,9 +12410,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5c2805dc", Component.options)
+    hotAPI.createRecord("data-v-57501eec", Component.options)
   } else {
-    hotAPI.reload("data-v-5c2805dc", Component.options)
+    hotAPI.reload("data-v-57501eec", Component.options)
   }
 })()}
 
@@ -12444,7 +12444,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-5c2805dc", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-57501eec", module.exports)
   }
 }
 
@@ -12455,7 +12455,7 @@ if (false) {
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 var settle = __webpack_require__(27);
 var buildURL = __webpack_require__(30);
 var parseHeaders = __webpack_require__(36);
@@ -22986,8 +22986,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 window.Vue = __webpack_require__(3);
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]);
 window.$ = window.jQuery = __webpack_require__(14);
-__webpack_require__(60);
-__webpack_require__(44);
+__webpack_require__(69);
+__webpack_require__(47);
 Vue.http.interceptors.push(function (request, next) {
     request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken);
     next();
@@ -22996,9 +22996,12 @@ Vue.http.interceptors.push(function (request, next) {
 
 //components
 
-var AddFoodCategory = Vue.component('foodcategory', __webpack_require__(51));
+var AddFoodCategory = Vue.component('foodcategory', __webpack_require__(54));
 var Example = Vue.component('foodcategory', __webpack_require__(7));
-var AdminMenu = Vue.component('adminmenu', __webpack_require__(52));
+var AdminMenu = Vue.component('adminmenu', __webpack_require__(56));
+var Dashboard = Vue.component('dashboard', __webpack_require__(57));
+var LeftMenu = Vue.component('leftmenu', __webpack_require__(58));
+var AddRole = Vue.component('addrole', __webpack_require__(55));
 
 //end of components
 
@@ -23006,7 +23009,9 @@ var AdminMenu = Vue.component('adminmenu', __webpack_require__(52));
 var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
     history: true,
     mode: 'history',
-    routes: [{ path: '/admin/menu', component: Example }, { path: '/admin', component: AdminMenu }]
+    hashbang: false,
+    linkActiveClass: 'active',
+    routes: [{ path: '/admin/menu', component: Example }, { path: '/admin/dashboard', component: Dashboard }, { path: '/admin/addrole', component: AddRole }]
 });
 //end of routers
 var backend = new Vue({
@@ -23027,7 +23032,7 @@ module.exports = __webpack_require__(21);
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 var bind = __webpack_require__(13);
 var Axios = __webpack_require__(23);
 var defaults = __webpack_require__(5);
@@ -23151,7 +23156,7 @@ module.exports = CancelToken;
 
 
 var defaults = __webpack_require__(5);
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 var InterceptorManager = __webpack_require__(24);
 var dispatchRequest = __webpack_require__(25);
 var isAbsoluteURL = __webpack_require__(33);
@@ -23242,7 +23247,7 @@ module.exports = Axios;
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -23301,7 +23306,7 @@ module.exports = InterceptorManager;
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 var transformData = __webpack_require__(28);
 var isCancel = __webpack_require__(11);
 var defaults = __webpack_require__(5);
@@ -23445,7 +23450,7 @@ module.exports = function settle(resolve, reject, response) {
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 /**
  * Transform the data for a request or a response
@@ -23515,7 +23520,7 @@ module.exports = btoa;
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -23609,7 +23614,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -23690,7 +23695,7 @@ module.exports = function isAbsoluteURL(url) {
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -23765,7 +23770,7 @@ module.exports = (
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -23784,7 +23789,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var utils = __webpack_require__(0);
+var utils = __webpack_require__(1);
 
 /**
  * Parse headers into an object
@@ -23890,6 +23895,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 /* 43 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	mounted: function mounted() {
+		console.log('Component mounted.');
+	}
+});
+
+/***/ }),
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24136,14 +24159,71 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 44 */
+/* 45 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        console.log('Component mounted.');
+    }
+});
+
+/***/ }),
+/* 46 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        console.log('Component mounted.');
+    }
+});
+
+/***/ }),
+/* 47 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(2);
 
-window._ = __webpack_require__(46);
+window._ = __webpack_require__(49);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -24153,7 +24233,7 @@ window._ = __webpack_require__(46);
 
 try {
   window.$ = window.jQuery = __webpack_require__(14);
-  __webpack_require__(45);
+  __webpack_require__(48);
 } catch (e) {}
 
 /**
@@ -24199,7 +24279,7 @@ Vue.http.interceptors.push(function (request, next) {
 });
 
 /***/ }),
-/* 45 */
+/* 48 */
 /***/ (function(module, exports) {
 
 /*!
@@ -26582,7 +26662,7 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-/* 46 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -43671,10 +43751,10 @@ if (typeof jQuery === 'undefined') {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(61)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(70)(module)))
 
 /***/ }),
-/* 47 */
+/* 50 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -43860,23 +43940,23 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(42),
   /* template */
-  __webpack_require__(57),
+  __webpack_require__(64),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\resturant\\resources\\assets\\js\\components\\backend\\addFoodCat.vue"
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\backend\\addFoodCat.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] addFoodCat.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -43887,9 +43967,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-b5cd2120", Component.options)
+    hotAPI.createRecord("data-v-75320c60", Component.options)
   } else {
-    hotAPI.reload("data-v-b5cd2120", Component.options)
+    hotAPI.reload("data-v-75320c60", Component.options)
   }
 })()}
 
@@ -43897,20 +43977,54 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 52 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(43),
   /* template */
-  __webpack_require__(59),
+  __webpack_require__(60),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\resturant\\resources\\assets\\js\\components\\backend\\adminMenu.vue"
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\backend\\addRole.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] addRole.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2d44a6de", Component.options)
+  } else {
+    hotAPI.reload("data-v-2d44a6de", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(44),
+  /* template */
+  __webpack_require__(62),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\backend\\adminMenu.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] adminMenu.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -43921,9 +44035,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-d61de1b6", Component.options)
+    hotAPI.createRecord("data-v-61d91435", Component.options)
   } else {
-    hotAPI.reload("data-v-d61de1b6", Component.options)
+    hotAPI.reload("data-v-61d91435", Component.options)
   }
 })()}
 
@@ -43931,41 +44045,117 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
 /* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(45),
+  /* template */
+  __webpack_require__(66),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\backend\\dashboard.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] dashboard.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-ab44c30a", Component.options)
+  } else {
+    hotAPI.reload("data-v-ab44c30a", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(46),
+  /* template */
+  __webpack_require__(61),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\backend\\leftMenu.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] leftMenu.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-591f0722", Component.options)
+  } else {
+    hotAPI.reload("data-v-591f0722", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 59 */,
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container"
-  }, [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-md-8 col-md-offset-2"
-  }, [_c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("asdfhlajsdhfljashdlfkjasdhkjfhjksdf Component")]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
-  }, [_vm._v("\n                    as;odhfashdfjhaskdfhkjdshkjdsh\n                ")])])])])])
-}]}
+  return _c('div', [_vm._v("\n\tRoles\n")])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-b5cd2120", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-2d44a6de", module.exports)
   }
 }
 
 /***/ }),
-/* 58 */,
-/* 59 */
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('div', {
+    staticClass: "settingBox"
+  }, [_vm._v("\n        Settings\n    ")]), _vm._v(" "), _c('ul', {
+    staticClass: "SideMenuUl"
+  }, [_c('router-link', {
+    attrs: {
+      "to": "/admin/addrole",
+      "tag": "li"
+    }
+  }, [_c('a', [_c('i', {
+    staticClass: "fa fa-gear"
+  }), _vm._v(" "), _c('span', [_vm._v("  Role")])])])], 1)])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-591f0722", module.exports)
+  }
+}
+
+/***/ }),
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -44351,12 +44541,76 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-d61de1b6", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-61d91435", module.exports)
   }
 }
 
 /***/ }),
-/* 60 */
+/* 63 */,
+/* 64 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-md-8 col-md-offset-2"
+  }, [_c('div', {
+    staticClass: "panel panel-default"
+  }, [_c('div', {
+    staticClass: "panel-heading"
+  }, [_vm._v("asdfhlajsdhfljashdlfkjasdhkjfhjksdf Component")]), _vm._v(" "), _c('div', {
+    staticClass: "panel-body"
+  }, [_vm._v("\n                    as;odhfashdfjhaskdfhkjdshkjdsh\n                ")])])])])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-75320c60", module.exports)
+  }
+}
+
+/***/ }),
+/* 65 */,
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('section', {
+    staticClass: "content-header"
+  }, [_c('h1', [_vm._v("\n        Dashboard\n        ")]), _vm._v(" "), _c('ol', {
+    staticClass: "breadcrumb"
+  }, [_c('li', [_c('a', {
+    attrs: {
+      "href": "#"
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-dashboard"
+  }), _vm._v("Home")])]), _vm._v(" "), _c('li', {
+    staticClass: "active"
+  }, [_vm._v("Dashboard")])])]), _vm._v(" "), _c('section', {
+    staticClass: "content"
+  }, [_vm._v("\n        Here goes dashboard\n    ")])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-ab44c30a", module.exports)
+  }
+}
+
+/***/ }),
+/* 67 */,
+/* 68 */,
+/* 69 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45446,7 +45700,7 @@ var xhrClient = function (request) {
 
 var nodeClient = function (request) {
 
-    var client = __webpack_require__(62);
+    var client = __webpack_require__(71);
 
     return new PromiseObj(function (resolve) {
 
@@ -45910,7 +46164,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 
 /***/ }),
-/* 61 */
+/* 70 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -45938,14 +46192,14 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 62 */
+/* 71 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 63 */,
-/* 64 */
+/* 72 */,
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(18);

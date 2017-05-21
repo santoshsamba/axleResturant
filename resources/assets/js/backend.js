@@ -15,6 +15,9 @@ Vue.http.interceptors.push((request, next) => {
 const AddFoodCategory = Vue.component('foodcategory', require('./components/backend/addFoodCat.vue'));
 const Example = Vue.component('foodcategory', require('./components/Example.vue'));
 const AdminMenu = Vue.component('adminmenu', require('./components/backend/adminMenu.vue'));
+const Dashboard = Vue.component('dashboard', require('./components/backend/dashboard.vue'));
+const LeftMenu = Vue.component('leftmenu', require('./components/backend/leftMenu.vue'));
+const AddRole = Vue.component('addrole', require('./components/backend/addRole.vue'));
 
 //end of components
 
@@ -22,9 +25,12 @@ const AdminMenu = Vue.component('adminmenu', require('./components/backend/admin
 const router = new VueRouter({
     history:true,
     mode:'history',
+    hashbang: false,
+    linkActiveClass: 'active',
     routes: [
         { path: '/admin/menu', component: Example },
-        { path: '/admin', component: AdminMenu }
+        { path: '/admin/dashboard', component: Dashboard },
+        { path: '/admin/addrole', component: AddRole }
     ]
 })
 //end of routers
