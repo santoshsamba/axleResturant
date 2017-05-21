@@ -18,6 +18,7 @@ const AdminMenu = Vue.component('adminmenu', require('./components/backend/admin
 const Dashboard = Vue.component('dashboard', require('./components/backend/dashboard.vue'));
 const LeftMenu = Vue.component('leftmenu', require('./components/backend/leftMenu.vue'));
 const AddRole = Vue.component('addrole', require('./components/backend/addRole.vue'));
+const HeaderName = Vue.component('contentheader', require('./components/backend/contentHeader.vue'));
 
 //end of components
 
