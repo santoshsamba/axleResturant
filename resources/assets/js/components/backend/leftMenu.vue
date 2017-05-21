@@ -4,7 +4,7 @@
             Settings
         </div>
         <ul class="SideMenuUl">
-            <router-link to="/admin/addrole" tag="li">
+            <router-link to="/admin/role" tag="li">
                 <a><i class="fa fa-gear"></i> <span>&nbsp Role</span></a>
            </router-link>
         </ul>

@@ -17,8 +17,12 @@ const Example = Vue.component('foodcategory', require('./components/Example.vue'
 const AdminMenu = Vue.component('adminmenu', require('./components/backend/adminMenu.vue'));
 const Dashboard = Vue.component('dashboard', require('./components/backend/dashboard.vue'));
 const LeftMenu = Vue.component('leftmenu', require('./components/backend/leftMenu.vue'));
-const AddRole = Vue.component('addrole', require('./components/backend/addRole.vue'));
+const Role = Vue.component('role', require('./components/backend/Role.vue'));
 const HeaderName = Vue.component('contentheader', require('./components/backend/contentHeader.vue'));
+const RoleTabs = Vue.component('roletabs', require('./components/backend/roleTabs.vue'));
+const AddRole = Vue.component('addrole', require('./components/backend/addRole.vue'));
+const AddEmployees = Vue.component('addemployees', require('./components/backend/addEmployees.vue'));
+const RoleMapping = Vue.component('rolemapping', require('./components/backend/roleMapping.vue'));
 
 //end of components
 
@@ -31,7 +35,10 @@ const router = new VueRouter({
     routes: [
         { path: '/admin/menu', component: Example },
         { path: '/admin/dashboard', component: Dashboard },
-        { path: '/admin/addrole', component: AddRole }
+        { path: '/admin/role', component: Role },
+        { path: '/admin/role/addrole', component: AddRole },
+        { path: '/admin/role/addemployees', component: AddEmployees },
+        { path: '/admin/role/rolemapping', component: RoleMapping }
     ]
 })
 //end of routers
