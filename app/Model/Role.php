@@ -6,14 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model
 {
-	protected $fillable = ['roleName'];
-	protected $table = "roles";
-	
-    public function employees(){
-        return $this->belongsToMany('App\Model\Employee');
-    }
-
-    public function Permissions(){
-        return $this->belongsToMany('App\Model\Permission');
-    }
+    protected $fillable = ['id','roleName'];
+    public $table = "roles";
+    protected $primaryKey = 'id';
+    public $timestamps = false;
 }

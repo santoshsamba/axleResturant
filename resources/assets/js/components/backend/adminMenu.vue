@@ -180,6 +180,7 @@
                 axios.put('/foodcategory/'+foodcatid, this.dataForEdit)
                     .then(response=>{
                         this.editFormId = 0;
+                        console.log(this.dataForEdit);
                     })
             },
             deleteFoodCat: function deleteFoodCat(foodcatid){
