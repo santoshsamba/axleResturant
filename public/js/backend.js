@@ -23062,7 +23062,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_v_tooltip___default.a);
 window.$ = window.jQuery = __webpack_require__(16);
 __webpack_require__(87);
 __webpack_require__(54);
-Vue.http.headers.common['X-CSRF-TOKEN'] = $("#token").attr("value");
+// Vue.http.headers.common['X-CSRF-TOKEN'] = $("#token").attr("value");
 Vue.http.interceptors.push(function (request, next) {
     request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken);
     next();

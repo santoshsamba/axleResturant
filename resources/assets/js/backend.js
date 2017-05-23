@@ -8,7 +8,7 @@ Vue.use(vToolTip);
 window.$ = window.jQuery = require('jquery');
 require('vue-resource');
 require('./bootstrap');
-Vue.http.headers.common['X-CSRF-TOKEN'] = $("#token").attr("value");
+// Vue.http.headers.common['X-CSRF-TOKEN'] = $("#token").attr("value");
 Vue.http.interceptors.push((request, next) => {
     request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken);
     next();
