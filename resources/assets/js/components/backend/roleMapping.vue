@@ -27,7 +27,6 @@ import roleTabs from './roleTabs'
 			},
 		methods: {
 			test(){
-				alert("tbus");
 			}
 		}
 	}

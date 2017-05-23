@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
+     <meta id="_token" value="{{ csrf_token() }}"> 
     <title>Admin</title>
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
@@ -174,6 +174,8 @@
         <!--<script src="/dist/js/demo.js"></script>-->
         <script src="/plugins/datepicker/bootstrap-datepicker.js"></script>
         <script src="/plugins/datepicker/bootstrap-datepicker.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+        <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
         <!-- Select and choose -->
         <!--<script src="/plugins/select2/select2.full.min.js"></script>-->
         <script src="/js/backend.js"></script>

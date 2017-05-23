@@ -1,9 +1,14 @@
 import VueRouter from 'vue-router'
+import vToolTip from 'v-tooltip'
+
 window.Vue = require('vue');
 Vue.use(VueRouter);
+Vue.use(vToolTip);
+
 window.$ = window.jQuery = require('jquery');
 require('vue-resource');
 require('./bootstrap');
+Vue.http.headers.common['X-CSRF-TOKEN'] = $("#token").attr("value");
 Vue.http.interceptors.push((request, next) => {
     request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken);
     next();
@@ -28,12 +33,11 @@ const RoleMapping = Vue.component('rolemapping', require('./components/backend/r
 
 //routers
 const router = new VueRouter({
-    history:true,
-    mode:'history',
-    hashbang: false,
-    linkActiveClass: 'active',
+        hashbang: false,
+    history: true,
+    root: '/admin/',
     routes: [
-        { path: '/admin/menu', component: Example },
+        { path: '/admin/menu', component: AdminMenu },
         { path: '/admin/dashboard', component: Dashboard },
         { path: '/admin/role', component: Role },
         { path: '/admin/role/addrole', component: AddRole },
@@ -45,3 +49,8 @@ const router = new VueRouter({
 const backend = new Vue({
     router
 }).$mount('#main');
+
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});

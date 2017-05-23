@@ -63,11 +63,12 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 72);
+/******/ 	return __webpack_require__(__webpack_require__.s = 90);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ (function(module, exports) {
 
 // this module is a runtime utility for cleaner component module output and will
@@ -124,8 +125,516 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 1 */,
-/* 2 */
+
+/***/ 10:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-md-8 col-md-offset-2"
+  }, [_c('div', {
+    staticClass: "panel panel-default"
+  }, [_c('div', {
+    staticClass: "panel-heading"
+  }, [_vm._v("Example Component")]), _vm._v(" "), _c('div', {
+    staticClass: "panel-body"
+  }, [_vm._v("\n                    I'm an example component!\n                ")])])])])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-57501eec", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ 17:
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(42),
+  /* template */
+  __webpack_require__(84),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\account.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] account.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-c9565362", Component.options)
+  } else {
+    hotAPI.reload("data-v-c9565362", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 18:
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(43),
+  /* template */
+  __webpack_require__(81),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\apetizer.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] apetizer.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-99e4ccec", Component.options)
+  } else {
+    hotAPI.reload("data-v-99e4ccec", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 19:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(5);
+
+// /**
+//  * First we will load all of this project's JavaScript dependencies which
+//  * includes Vue and other libraries. It is a great starting point when
+//  * building robust, powerful web applications using Vue and Laravel.
+//  */
+
+// require('./bootstrap');
+// import router from './routes.js';
+// require('./components');
+
+// /**
+//  * Next, we will create a fresh Vue application instance and attach it to
+//  * the page. Then, you may begin adding components to this application
+//  * or customize the JavaScript scaffolding to fit your unique needs.
+//  */
+
+// const app = new Vue({
+//     el: '#app',
+//     router
+// });
+
+window.Vue = __webpack_require__(6);
+Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]);
+
+//components
+
+// const AddFoodCategory = Vue.component('foodcategory', require('./components/backend/addFoodCat.vue'));
+var Example = Vue.component('example', __webpack_require__(9));
+var Apetizer = Vue.component('compapetizer', __webpack_require__(18));
+var Babrage = Vue.component('comp-babrage', __webpack_require__(63));
+var MainCourse = Vue.component('comp-mainCourse', __webpack_require__(72));
+var CategoryMenu = Vue.component('compcategory', __webpack_require__(61));
+var Menu = Vue.component('compmenu', __webpack_require__(62));
+var Account = Vue.component('comp-account', __webpack_require__(17));
+
+//end of components
+
+//routers
+var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
+    mode: 'history',
+    routes: [{ path: '/abc', component: Example }]
+});
+router.mode = 'html5';
+//end of routers
+var backend = new Vue({
+    router: router
+}).$mount('#app');
+
+/***/ }),
+
+/***/ 2:
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
+/***/ 21:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 40:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+		return {};
+	}
+});
+
+/***/ }),
+
+/***/ 41:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            ApetizerData: [{
+                foodId: 1,
+                foodImage: '/images/momo.jpg',
+                foodName: 'Mo Mo',
+                foodPrice: 100
+            }, {
+                foodId: 2,
+                foodImage: '/images/chowmin.jpg',
+                foodName: 'chowmin',
+                foodPrice: 200
+            }, {
+                foodId: 3,
+                foodImage: '/images/momo.jpg',
+                foodName: 'Mo Mo',
+                foodPrice: 50
+            }, {
+                foodId: 4,
+                foodImage: '/images/chowmin.jpg',
+                foodName: 'Mo Mo',
+                foodPrice: 70
+            }, {
+                foodId: 5,
+                foodImage: '/images/momo.jpg',
+                foodName: 'Mo Mo',
+                foodPrice: 100
+            }, {
+                foodId: 6,
+                foodImage: '/images/chowmin.jpg',
+                foodName: 'Mo Mo',
+                foodPrice: 100
+            }],
+            roughData: [{
+                fid: '',
+                food: '',
+                price: ''
+            }],
+            totalAmount: 0,
+            tempTotal: 0
+        };
+    },
+
+    computed: {
+        totalPrice: function totalPrice() {
+            return this.totalAmount;
+        }
+    },
+    methods: {
+        addMenuDetails: function addMenuDetails(food) {
+            this.roughData.push({ fid: food.foodId, food: food.foodName, price: food.foodPrice });
+            this.tempTotal = food.foodPrice;
+            this.totalAmount = this.totalAmount + this.tempTotal;
+        },
+        removeFoodItems: function removeFoodItems(price, index) {
+            this.totalAmount = this.totalAmount - price;
+            this.roughData.splice(index, 1);
+        }
+    }
+});
+
+/***/ }),
+
+/***/ 42:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__apetizer_vue__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__apetizer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__apetizer_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        appitzer: __WEBPACK_IMPORTED_MODULE_0__apetizer_vue___default.a
+    },
+    data: function data() {
+        return {
+            roughData: [{ first: '' }]
+        };
+    },
+
+    porp: ['menuadd'],
+    methods: {
+        addMenuDetails: function addMenuDetails() {
+            alert("adf");
+            this.roughData.push({ first: 'asdf' });
+        }
+    }
+});
+
+/***/ }),
+
+/***/ 43:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__account_vue__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__account_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__account_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        account: __WEBPACK_IMPORTED_MODULE_0__account_vue___default.a
+    },
+    data: function data() {
+        return {
+            ApetizerData: [{
+                foodId: 1,
+                foodImage: '/images/momo.jpg',
+                foodName: 'Mo Mo',
+                foodPrice: '200'
+            }, {
+                foodId: 2,
+                foodImage: '/images/chowmin.jpg',
+                foodName: 'Mo Mo',
+                foodPrice: '200'
+            }, {
+                foodId: 3,
+                foodImage: '/images/momo.jpg',
+                foodName: 'Mo Mo',
+                foodPrice: '200'
+            }, {
+                foodId: 4,
+                foodImage: '/images/chowmin.jpg',
+                foodName: 'Mo Mo',
+                foodPrice: '200'
+            }, {
+                foodId: 5,
+                foodImage: '/images/momo.jpg',
+                foodName: 'Mo Mo',
+                foodPrice: '200'
+            }, {
+                foodId: 6,
+                foodImage: '/images/chowmin.jpg',
+                foodName: 'Mo Mo',
+                foodPrice: '200'
+            }]
+        };
+    },
+    mounted: function mounted() {
+        console.log('Component mounted.');
+    }
+});
+
+/***/ }),
+
+/***/ 5:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2596,7 +3105,8 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 3 */
+
+/***/ 6:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11921,613 +12431,18 @@ Vue$3.compile = compileToFunctions;
 
 module.exports = Vue$3;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports) {
 
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 5 */,
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    }
-});
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(6),
-  /* template */
-  __webpack_require__(8),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\Example.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-57501eec", Component.options)
-  } else {
-    hotAPI.reload("data-v-57501eec", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container"
-  }, [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-md-8 col-md-offset-2"
-  }, [_c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("Example Component")]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
-  }, [_vm._v("\n                    I'm an example component!\n                ")])])])])])
-}]}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-57501eec", module.exports)
-  }
-}
-
-/***/ }),
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */
+/***/ 61:
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(40),
   /* template */
-  __webpack_require__(67),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\account.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] account.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-c9565362", Component.options)
-  } else {
-    hotAPI.reload("data-v-c9565362", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(41),
-  /* template */
-  __webpack_require__(65),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\apetizer.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] apetizer.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-99e4ccec", Component.options)
-  } else {
-    hotAPI.reload("data-v-99e4ccec", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 17 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(2);
-
-// /**
-//  * First we will load all of this project's JavaScript dependencies which
-//  * includes Vue and other libraries. It is a great starting point when
-//  * building robust, powerful web applications using Vue and Laravel.
-//  */
-
-// require('./bootstrap');
-// import router from './routes.js';
-// require('./components');
-
-// /**
-//  * Next, we will create a fresh Vue application instance and attach it to
-//  * the page. Then, you may begin adding components to this application
-//  * or customize the JavaScript scaffolding to fit your unique needs.
-//  */
-
-// const app = new Vue({
-//     el: '#app',
-//     router
-// });
-
-window.Vue = __webpack_require__(3);
-Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]);
-
-//components
-
-// const AddFoodCategory = Vue.component('foodcategory', require('./components/backend/addFoodCat.vue'));
-var Example = Vue.component('example', __webpack_require__(7));
-var Apetizer = Vue.component('compapetizer', __webpack_require__(16));
-var Babrage = Vue.component('comp-babrage', __webpack_require__(53));
-var MainCourse = Vue.component('comp-mainCourse', __webpack_require__(59));
-var CategoryMenu = Vue.component('compcategory', __webpack_require__(51));
-var Menu = Vue.component('compmenu', __webpack_require__(52));
-var Account = Vue.component('comp-account', __webpack_require__(15));
-
-//end of components
-
-//routers
-var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
-    mode: 'history',
-    routes: [{ path: '/abc', component: Example }]
-});
-router.mode = 'html5';
-//end of routers
-var backend = new Vue({
-    router: router
-}).$mount('#app');
-
-/***/ }),
-/* 18 */,
-/* 19 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */,
-/* 28 */,
-/* 29 */,
-/* 30 */,
-/* 31 */,
-/* 32 */,
-/* 33 */,
-/* 34 */,
-/* 35 */,
-/* 36 */,
-/* 37 */,
-/* 38 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-	data: function data() {
-		return {};
-	}
-});
-
-/***/ }),
-/* 39 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            ApetizerData: [{
-                foodId: 1,
-                foodImage: '/images/momo.jpg',
-                foodName: 'Mo Mo',
-                foodPrice: 100
-            }, {
-                foodId: 2,
-                foodImage: '/images/chowmin.jpg',
-                foodName: 'chowmin',
-                foodPrice: 200
-            }, {
-                foodId: 3,
-                foodImage: '/images/momo.jpg',
-                foodName: 'Mo Mo',
-                foodPrice: 50
-            }, {
-                foodId: 4,
-                foodImage: '/images/chowmin.jpg',
-                foodName: 'Mo Mo',
-                foodPrice: 70
-            }, {
-                foodId: 5,
-                foodImage: '/images/momo.jpg',
-                foodName: 'Mo Mo',
-                foodPrice: 100
-            }, {
-                foodId: 6,
-                foodImage: '/images/chowmin.jpg',
-                foodName: 'Mo Mo',
-                foodPrice: 100
-            }],
-            roughData: [{
-                fid: '',
-                food: '',
-                price: ''
-            }],
-            totalAmount: 0,
-            tempTotal: 0
-        };
-    },
-
-    computed: {
-        totalPrice: function totalPrice() {
-            return this.totalAmount;
-        }
-    },
-    methods: {
-        addMenuDetails: function addMenuDetails(food) {
-            this.roughData.push({ fid: food.foodId, food: food.foodName, price: food.foodPrice });
-            this.tempTotal = food.foodPrice;
-            this.totalAmount = this.totalAmount + this.tempTotal;
-        },
-        removeFoodItems: function removeFoodItems(price, index) {
-            this.totalAmount = this.totalAmount - price;
-            this.roughData.splice(index, 1);
-        }
-    }
-});
-
-/***/ }),
-/* 40 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__apetizer_vue__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__apetizer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__apetizer_vue__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: {
-        appitzer: __WEBPACK_IMPORTED_MODULE_0__apetizer_vue___default.a
-    },
-    data: function data() {
-        return {
-            roughData: [{ first: '' }]
-        };
-    },
-
-    porp: ['menuadd'],
-    methods: {
-        addMenuDetails: function addMenuDetails() {
-            alert("adf");
-            this.roughData.push({ first: 'asdf' });
-        }
-    }
-});
-
-/***/ }),
-/* 41 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__account_vue__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__account_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__account_vue__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: {
-        account: __WEBPACK_IMPORTED_MODULE_0__account_vue___default.a
-    },
-    data: function data() {
-        return {
-            ApetizerData: [{
-                foodId: 1,
-                foodImage: '/images/momo.jpg',
-                foodName: 'Mo Mo',
-                foodPrice: '200'
-            }, {
-                foodId: 2,
-                foodImage: '/images/chowmin.jpg',
-                foodName: 'Mo Mo',
-                foodPrice: '200'
-            }, {
-                foodId: 3,
-                foodImage: '/images/momo.jpg',
-                foodName: 'Mo Mo',
-                foodPrice: '200'
-            }, {
-                foodId: 4,
-                foodImage: '/images/chowmin.jpg',
-                foodName: 'Mo Mo',
-                foodPrice: '200'
-            }, {
-                foodId: 5,
-                foodImage: '/images/momo.jpg',
-                foodName: 'Mo Mo',
-                foodPrice: '200'
-            }, {
-                foodId: 6,
-                foodImage: '/images/chowmin.jpg',
-                foodName: 'Mo Mo',
-                foodPrice: '200'
-            }]
-        };
-    },
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    }
-});
-
-/***/ }),
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(38),
-  /* template */
-  __webpack_require__(63),
+  __webpack_require__(79),
   /* scopeId */
   null,
   /* cssModules */
@@ -12554,14 +12469,15 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 52 */
+
+/***/ 62:
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(39),
+  __webpack_require__(41),
   /* template */
-  __webpack_require__(68),
+  __webpack_require__(86),
   /* scopeId */
   null,
   /* cssModules */
@@ -12588,7 +12504,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 53 */
+
+/***/ 63:
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(0)(
@@ -12608,12 +12525,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */
+
+/***/ 72:
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(0)(
@@ -12633,10 +12546,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */
+
+/***/ 79:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -12687,8 +12598,38 @@ if (false) {
 }
 
 /***/ }),
-/* 64 */,
-/* 65 */
+
+/***/ 8:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        console.log('Component mounted.');
+    }
+});
+
+/***/ }),
+
+/***/ 81:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -12759,8 +12700,8 @@ if (false) {
 }
 
 /***/ }),
-/* 66 */,
-/* 67 */
+
+/***/ 84:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -12779,7 +12720,8 @@ if (false) {
 }
 
 /***/ }),
-/* 68 */
+
+/***/ 86:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -12875,15 +12817,49 @@ if (false) {
 }
 
 /***/ }),
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */
+
+/***/ 9:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(17);
-module.exports = __webpack_require__(19);
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(8),
+  /* template */
+  __webpack_require__(10),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "D:\\Axle\\axleResturant\\axleResturant\\resources\\assets\\js\\components\\Example.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-57501eec", Component.options)
+  } else {
+    hotAPI.reload("data-v-57501eec", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 90:
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(19);
+module.exports = __webpack_require__(21);
 
 
 /***/ })
-/******/ ]);
+
+/******/ });

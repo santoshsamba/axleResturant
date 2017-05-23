@@ -73,6 +73,7 @@ class foodCategoryController extends Controller
     public function update(Request $request, foodCategory $foodcategory)
     {
         $foodcategory->update($request->all());
+        echo $foodcategory;
     }
 
     /**

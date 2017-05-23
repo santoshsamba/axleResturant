@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Model\Role;
 
 class roleController extends Controller
 {
@@ -13,7 +14,7 @@ class roleController extends Controller
      */
     public function index()
     {
-        //
+        return Role::orderByDesc('id')->get();
     }
 
     /**
@@ -23,7 +24,6 @@ class roleController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -34,7 +34,7 @@ class roleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Role::create($request->all());
     }
 
     /**
@@ -45,7 +45,6 @@ class roleController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -56,7 +55,6 @@ class roleController extends Controller
      */
     public function edit($id)
     {
-        //
     }
 
     /**
@@ -68,7 +66,8 @@ class roleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $edit = Role::find($id)->update($request->all());
+        return response()->json($edit);
     }
 
     /**
@@ -79,6 +78,6 @@ class roleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return "succsessasf";
     }
 }
