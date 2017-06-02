@@ -8,9 +8,9 @@ use Auth;
 
 class employeeLoginController extends Controller
 {
-	 // public function __construct(){
-	 // 	$this->middleware('guest:employee');
-	 // }
+	 public function __construct(){
+	 	$this->middleware('guest:employee', ['except' => ['logout']]);
+	 }
 
    	public function showEmployeeLogin(){
    		return view('auth/adminLogin');
@@ -18,26 +18,22 @@ class employeeLoginController extends Controller
 
    	public function employeeLogin(Request $request){
    		//validate the form
+
    		//check authentication
-   		// dd($request);
    		if(Auth::guard('employee')->attempt(['email' => $request->email, 'password' => $request->password])){
-   			return redirect('/admin');
+   			return redirect('/admin/dashboard');
    		}
 
    		//fail
-   		// return redirect()->back()->withInput($request->only('email','remember'));
-   		return redirect("asdf");
+   		return redirect()->back()->withInput($request->only('email','remember'));
    	}
 
    	//logout
-   	public function logout(Request $request)
+   	public function logout()
     {
-        $this->guard()->logout();
-        dd($request);
-        $request->session()->flush();
-
-        $request->session()->regenerate();
-
-        return redirect('/adminLogin');
+        Auth::guard('employee')->logout();
+        // $request->session()->flush();
+        // $request->session()->regenerate();
+        return redirect()->route('admin.login');
     }
 }

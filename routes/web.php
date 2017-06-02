@@ -10,20 +10,19 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Auth::routes();
+Auth::routes();
 // admin Login
 Route::prefix('/admin')->group(function(){
-	//Route::get('/login', 'Auth\employeeLoginController@showEmployeeLogin')->name('admin.login');
+	Route::get('/login', 'Auth\employeeLoginController@showEmployeeLogin')->name('admin.login');
 	Route::post('/login', 'Auth\employeeLoginController@employeeLogin')->name('admin.login.submit');
-
+	Route::get('/logout', 'Auth\employeeLoginController@logout')->name('admin.logout');
 });
-Route::get('/admin', function(){
+Route::get('/admin/dashboard', function(){
 	return view('layouts/main');
-});	
-Route::get('/logout', 'Auth\employeeLoginController@logout')->name('admin.logout');
-Route::get('/', function(){
-	return view('auth/adminLogin');
-});
+})->name('admin.dashboard');	
+// Route::get('/', function(){
+// 	return view('auth/adminLogin');
+// });
 Route::get('/order', function(){
 	return view('Order');
 });
