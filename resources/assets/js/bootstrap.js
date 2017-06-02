@@ -11,7 +11,7 @@ try {
     window.$ = window.jQuery = require('jquery');
     require('bootstrap-sass');
 } catch (e) {}
-
+window.select2 = require('select2');
 /**
  * Vue js part
  */

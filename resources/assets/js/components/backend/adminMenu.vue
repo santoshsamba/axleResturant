@@ -1,7 +1,18 @@
 <template>
-        <div class="row">
-            <div class="menuPage">
+<div>
+<contentheader :headName="contentTitle"></contentheader>
+    <section class="content">
+        <div class="content-block">
             <div v-show="showMsg"></div>
+            <div class="noticeBox" v-show="showForm">
+                <form @submit.prevent="addFoodCategory(dataFoodCategory)">
+                   <input type="text" placeholder="Enter Category Type" class="form-control" v-model="dataFoodCategory.foodCatName">
+                   <br />
+                   <input type="submit" class="btn btn-success" value="Save"/>
+                   <input type="button" @click="showForm = !showForm" class="btn btn-danger" value="Cancel"/>
+                </form>
+            </div>
+            <input type="button" @click="showForm=!showForm" class="btn btn-primary" value="Add Category"/>
             <div class="menuRenderDiv">
                 <div class="catDiv" v-for="item in fetchedCatData">
                 <transition name="slide-fade">
@@ -11,21 +22,20 @@
                               <label>Category Name</label>
                               <input type="text" id="" class="form-control" v-model="dataForEdit.foodCatName"/>
                             </div>
-                        
-                        <div style="margin-top:10px;">
-                          <input type="submit" class="btn btn-success btn-sm" value="Save"/>
-                          <input type="button" @click="foodCatBoxHide" class="btn btn-danger btn-sm" value="Cancel"/>
-                        </div>
+                            <div style="margin-top:10px;">
+                              <input type="submit" class="btn btn-success btn-sm" value="Save"/>
+                              <input type="button" @click="foodCatBoxHide" class="btn btn-danger btn-sm" value="Cancel"/>
+                            </div>
                         </form>
                     </div>
                 </transition>
                     <div class="row foodCatBox"  v-show="!showEditForm(item.foodCatId)">
                         <div class="foodCatDiv">
                             <div class="col col-md-1 makeitzero">
-                                <img src="/images/1.jpg" style="padding:0" alt="CategoryImage" width="60px" height="60px" />
+                                <img src="/images/1.jpg" style="padding:0" alt="CategoryImage" />
                             </div>
-                            <div class="col col-md-9" style="cursor:pointer;" @click="assignFoodId(item.foodCatId)">
-                                <label style="font-size:22px;">{{ item.foodCatName }}</label>
+                            <div class="col col-md-9 makeitzero" style="cursor:pointer;" @click="assignFoodId(item.foodCatId)">
+                                <label style="font-size:22px; cursor:pointer;">{{ item.foodCatName }}</label>
                             </div>
                             <div class="col col-md-2 hideMe">
                                 <div class="btn pull-right" @click="deleteFoodCat(item.foodCatId)"><i class="fa fa-times"></i></div>
@@ -39,9 +49,9 @@
                                 <div class="foodItemDiv" v-if="item.foodCatId == foodItem.foodCatId">
                                     <div class="row">
                                         <div class="col col-md-1 makeitzero">
-                                            <img src="/images/1.jpg" style="padding:0" alt="CategoryImage" width="60px" height="60px" />
+                                            <img src="/images/1.jpg" style="padding:0" alt="CategoryImage" />
                                         </div>
-                                        <div class="col col-md-8">
+                                        <div class="col col-md-8 makeitzero">
                                             <label>{{foodItem.foodName}}</label>
                                             <p> {{foodItem.foodPrice}}</p>
                                             <p>{{foodItem.foodDescription}}</p>
@@ -91,17 +101,10 @@
                 </div>
 
             </div>
-            <div class="noticeBox" v-show="showForm">
-                <form @submit.prevent="addFoodCategory(dataFoodCategory)">
-                   <input type="text" placeholder="Enter Category Type" class="form-control" v-model="dataFoodCategory.foodCatName">
-                   <br />
-                   <input type="submit" class="btn btn-success" value="Save"/>
-                   <input type="button" @click="showForm = !showForm" class="btn btn-danger" value="Cancel"/>
-                </form>
-            </div>
-            <input type="button" @click="showForm=!showForm" class="btn btn-primary" value="Add Category"/>
-            </div>
+            
         </div>
+    </section>
+</div>
 </template>
 
 <script>
@@ -109,6 +112,7 @@
         prop: ['tempval'],
         data(){
             return{
+                contentTitle: 'Set up Menu',
                 toogleFoodFormDiv: false,
                 editFoodId: '',
                 showFoodBox: false,
@@ -144,9 +148,9 @@
             addFoodCategory: function addFoodCategory(foodData){
                 console.log(foodData);
                 axios.post('/foodcategory', foodData).then(response=>{
-                        this.showMsg = true;
-                        finalMsg="succes";
-                        this.getFoodCatData();
+                    toastr.success('Item Inserted Successfully.', 'Success Alert', {timeOut: 5000});
+                    this.getFoodCatData();
+                    this.dataFoodCategory = '';
                 })
                 .catch(error=>{
                     this.finalMsg = error.response.data;
@@ -187,6 +191,7 @@
                 let ok = confirm("Are you sure want to delete it ?");
                 if(ok){
                     axios.delete('foodcategory/'+foodcatid).then(response=>{
+                        //toastr.success('Item Deleted Successfully.', 'Success Alert', {timeOut: 5000});
                         this.getFoodCatData();
                     })
                  }
@@ -213,6 +218,7 @@
             addFoodItem: function addFoodItem(items, foodcatid){
                 items.foodCatId = foodcatid;
                 axios.post('/food', items).then(response=>{
+                    toastr.success('Item Inserted Successfully.', 'Success Alert', {timeOut: 5000});
                     this.clearFoodForm();
                 })
             },

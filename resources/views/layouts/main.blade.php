@@ -5,27 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
      <meta id="_token" value="{{ csrf_token() }}"> 
     <title>Admin</title>
-
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
     <!-- Bootstrap 3.3.5 -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
     <!-- Font Awesome -->
+    <!-- <link rel="stylesheet" href="/dist/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-        <!-- Ionicons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-
-    <!-- jvectormap -->
-    <!-- <link rel="stylesheet" href="/plugins/jvectormap/jquery-jvectormap-1.2.2.css" /> -->
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/dist/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/dist/css/AdminLTE.min.css" />
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css" />
     <!-- Select and Choose -->
-    <!-- <link rel="stylesheet" href="/plugins/select2/select2.min.css" /> -->
-
+    <link rel="stylesheet" href="/plugins/select2/select2.min.css" />
+    <!-- toaster -->
+    <link href="/dist/css/toastr.min.css" rel="stylesheet">
     <link href="/plugins/datepicker/datepicker3.css" rel="stylesheet" />
-    <link href="/css/main.css" rel="stylesheet" type="text/css">  
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" /> -->
+    
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
      <script>
@@ -42,7 +42,6 @@
                     <!-- logo for regular state and mobile devices -->
                     <span class="logo-lg"><b>Restuatant </b>POS</span>
                 </a>
-
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class= "navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -54,6 +53,7 @@
                         <ul class="nav navbar-nav">
                             <!-- Messages: style can be found in dropdown.less-->
                             <li class="dropdown user user-menu">
+                                <a href="{{ route('admin.logout') }}"> Logout </a>
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="/dist/img/user2-160x160.jpg" class="user-image" alt="User Image" />
                                     <span class="hidden-xs">Alexander Pierce</span>
@@ -101,30 +101,14 @@
             </header>
             <!-- Left side column. contains the logo and sidebar -->
             <aside class="main-sidebar">
-                <!-- sidebar: style can be found in sidebar.less -->
-                <section class="sidebar">
-                    <!-- Sidebar user panel -->
-               <!--      <div class="user-panel">
-                        <div class="pull-left image">
-                            <img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
-                        </div>
-                        <div class="pull-left info">
-                            <p>Alexander Pierce</p>
-                            <a href="#"><i class="fa fa-circle text-success"></i>Online</a>
-                        </div>
-                    </div> -->
-                    <!-- search form -->
-                    <!-- /.search form -->
-                    <!-- sidebar menu: : style can be found in sidebar.less -->
-                    @include('partails.navbar')
-                </section>
+                    <sidemenu></sidemenu>
+                    <!-- @include('partails.navbar') -->
                 <!-- /.sidebar -->
             </aside>
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
 
                 <router-view></router-view>
-                <!-- /.content -->
             </div>
             <!-- /.content-wrapper -->
             <footer class="main-footer">
@@ -137,48 +121,20 @@
             <aside class="control-sidebar control-sidebar-dark">
                 <leftmenu></leftmenu>
             </aside>
-            <!-- /.control-sidebar -->
-            <!-- Add the sidebar's background. This div must be placed
-           immediately after the control sidebar -->
             <div class="control-sidebar-bg"></div>
         </div>
       </div>
-        <!-- ./wrapper -->
-
-        <!-- jQuery 2.1.4 -->
-     <script
-        src="https://code.jquery.com/jquery-3.2.1.js"
-        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-        crossorigin="anonymous"></script>
-
-        <!-- Bootstrap 3.3.5 -->
-        <script src="/bootstrap/js/bootstrap.min.js"></script>
-        <!-- FastClick -->
-        <!--<script src="/plugins/fastclick/fastclick.min.js"></script> -->
-        <!-- AdminLTE App -->
         
-
-        <!-- Sparkline -->
-        <script src="/plugins/jQueryUI/jquery-ui.js"></script>
-        <!--<script src="/plugins/sparkline/jquery.sparkline.min.js"></script> -->
-        <!-- jvectormap -->
-        <!--<script src="/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-        <script src="/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> -->
-        <!-- SlimScroll 1.3.0 -->
-        <!--<script src="/plugins/slimScroll/jquery.slimscroll.min.js"></script>-->
-        <!-- ChartJS 1.0.1 -->
-        <!--<script src="/plugins/chartjs/Chart.min.js"></script> -->
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <!-- <script src="/dist/js/pages/dashboard2.js"></script> -->
-        <!-- AdminLTE for demo purposes -->
-        <!--<script src="/dist/js/demo.js"></script>-->
-        <script src="/plugins/datepicker/bootstrap-datepicker.js"></script>
-        <script src="/plugins/datepicker/bootstrap-datepicker.min.js"></script>
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-        <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
-        <!-- Select and choose -->
-        <!--<script src="/plugins/select2/select2.full.min.js"></script>-->
-        <script src="/js/backend.js"></script>
-        <script src="/dist/js/app.min.js"></script>
+    
+    <!-- jQuery 2.1.4 -->
+    <script src="/js/backend.js"></script>
+    <script src="/plugins/jQueryUI/jquery-ui.min.js" crossorigin="anonymous"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/plugins/datepicker/bootstrap-datepicker.js"></script>
+    <script src="/plugins/datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="/dist/js/adminlte.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <!-- custom js -->
+    <script src="/dist/js/app.min.js"></script>        
 </body>
 </html>

@@ -1,14 +1,16 @@
 import VueRouter from 'vue-router'
 import vToolTip from 'v-tooltip'
+// import vSelect from 'vue-select'
+
 
 window.Vue = require('vue');
+
 Vue.use(VueRouter);
 Vue.use(vToolTip);
 
-window.$ = window.jQuery = require('jquery');
+// window.$ = window.jQuery = require('jquery');
 require('vue-resource');
 require('./bootstrap');
-// Vue.http.headers.common['X-CSRF-TOKEN'] = $("#token").attr("value");
 Vue.http.interceptors.push((request, next) => {
     request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken);
     next();
@@ -16,6 +18,7 @@ Vue.http.interceptors.push((request, next) => {
 // require('vue-resource');
 
 //components
+// Vue.component('v-select', vSelect);
 
 const AddFoodCategory = Vue.component('foodcategory', require('./components/backend/addFoodCat.vue'));
 const Example = Vue.component('foodcategory', require('./components/Example.vue'));
@@ -28,12 +31,14 @@ const RoleTabs = Vue.component('roletabs', require('./components/backend/roleTab
 const AddRole = Vue.component('addrole', require('./components/backend/addRole.vue'));
 const AddEmployees = Vue.component('addemployees', require('./components/backend/addEmployees.vue'));
 const RoleMapping = Vue.component('rolemapping', require('./components/backend/roleMapping.vue'));
+const SideMenu = Vue.component('sidemenu', require('./components/backend/sidemenu.vue'));
+const SelectEg = Vue.component('selecteg', require('./components/backend/selecteg.vue'));
 
 //end of components
 
 //routers
 const router = new VueRouter({
-        hashbang: false,
+    hashbang: false,
     history: true,
     root: '/admin/',
     routes: [
@@ -42,7 +47,8 @@ const router = new VueRouter({
         { path: '/admin/role', component: Role },
         { path: '/admin/role/addrole', component: AddRole },
         { path: '/admin/role/addemployees', component: AddEmployees },
-        { path: '/admin/role/rolemapping', component: RoleMapping }
+        { path: '/admin/role/rolemapping', component: RoleMapping },
+        { path: '/admin/role/select', component: SelectEg }
     ]
 })
 //end of routers
@@ -53,4 +59,8 @@ const backend = new Vue({
 
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
+            
+            
+            $(".select2").select2();
 });
+

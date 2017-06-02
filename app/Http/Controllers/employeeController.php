@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use DB;
 use Illuminate\Http\Request;
-use App\Model\foodCategory;
-use App\Model\foodType;
-use App\Model\food;
+use App\Model\Employee;
+use Illuminate\Support\Facades\Hash;
 
-class foodCategoryController extends Controller
+class employeeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +15,7 @@ class foodCategoryController extends Controller
      */
     public function index()
     {
-        return foodCategory::orderByDesc('foodCatId')->get();
+        return Employee::orderByDesc('id')->get();
     }
 
     /**
@@ -38,9 +36,28 @@ class foodCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $user = foodType::find(1);
-        $user->foodcategory()->create($request->all());
-            return "sucess";
+        // $reqJar = $request;
+        // $passRaw = $reqJar->password;
+        //$hassPass = Hash::make($request->password);
+        // $reqJar->password = $hassPass;
+        
+
+        // echo $reqJar;
+        $empIns = new Employee;
+        $empResult = $empIns->fill([
+                'firstName' => $request->firstName,
+                'lastName' => $request->lastName,
+                'email' => $request->email,
+                'username' => $request->username,
+                'password' => Hash::make($request->password),
+                'address' => $request->address,
+                'phoneNumber' => $request->phoneNumber,
+                'status' => $request->status
+            ])->save();
+        if($empResult != null){
+            return "success";
+        }
+        return "failed";
     }
 
     /**
@@ -72,9 +89,13 @@ class foodCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, foodCategory $foodcategory)
+    public function update(Request $request, $id)
     {
-        return $foodcategory->update($request->all());
+        $empresult = Employee::find($id)->update($request->all());
+        if($empresult != null){
+            return "success";
+        }
+        return "failed";
     }
 
     /**
@@ -83,16 +104,8 @@ class foodCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($foodcatid)
+    public function destroy($id)
     {
-        DB::beginTransaction();
-        $delFoodItem = food::where('foodCatId', $foodcatid)->delete();
-
-        $delFoodCat = foodCategory::where('foodCatId', $foodcatid)->delete();
-        if(!$delFoodCat || !$delFoodCat){
-            DB::rollback();
-        }else{
-            DB::commit();
-        }
+        //
     }
 }

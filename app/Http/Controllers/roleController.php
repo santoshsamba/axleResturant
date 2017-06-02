@@ -77,6 +77,7 @@ class roleController extends Controller
      */
     public function destroy($id)
     {
-        return "succsessasf";
+        Role::find($id)->delete();
+        return "success";
     }
 }
