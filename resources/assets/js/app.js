@@ -23,6 +23,10 @@ import VueRouter from 'vue-router'
 window.Vue = require('vue');
 Vue.use(VueRouter);
 
+  import Multiselect from 'vue-multiselect'
+
+  // register globally
+  Vue.component('multiselect',Multiselect)
 
 //components
 
@@ -39,12 +43,13 @@ const Account = Vue.component('comp-account', require('./components/account.vue'
 
 //routers
 const router = new VueRouter({
-    mode:'history',
+    hashbang: false,
+    history: true,
     routes: [
-        { path: '/abc', component: Example }
+        { path: '/abc', component: Example },
+        { path: '/menu', component: Menu }
     ]
 })
-router.mode = 'html5'
 //end of routers
 const backend = new Vue({
     router

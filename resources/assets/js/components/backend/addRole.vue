@@ -20,7 +20,7 @@
 			  <table class="table">
 			    <thead>
 			      <tr>
-			        <th>S.No</th>
+			        <th>#</th>
 			        <th>Firstname</th>
 			        <th>Operation</th>
 			      </tr>
@@ -29,15 +29,15 @@
 			      <tr v-for="(item, sno) in fetchedRoleData">
 			        <td>{{ sno += 1 }}</td>
 			        <td>{{ item.roleName }}</td>
-			        <td><button type="submit" class="btn btn-link" @click.prevent="getRoleForEdit(item)" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit" ></i></button>
-			        <button type="submit" class="btn btn-link" @click.prevent="deleteRole(item.id)" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash" ></i></button>
+			        <td>
+				        <button type="submit" class="btn btn-link" @click.prevent="getRoleForEdit(item)" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit" ></i></button>
+				        <button type="submit" class="btn btn-link" @click.prevent="deleteRole(item.id)" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash" ></i></button>
 			        </td>
 			      </tr>
 			    </tbody>
 			  </table>
 			  </div>
 			  <!-- modal -->
-
 			  <!-- Trigger the modal with a button -->
 				<transition name="modal">
 				    <div class="modal-mask" v-show="showModal">
@@ -58,8 +58,8 @@
 				    				<input type="text" name="" placeholder="Enter Role Name" v-model="roleForEdit.roleName" class="form-control input-lg">
 				    			</div>
 				    			<div class="form-group">
-				    				<input type="submit" class="btn btn-success btn-sm" value="Save"/>
-				    				<input type="button" value="Cancel" class="btn btn-danger btn-lg btnLength" @click="showModal = false" />
+				    				<button type="submit" name="" class="btn btn-primary btn-lg btnLength"><i class="fa fa-save"></i><span> save</span></button>
+									<div class="btn btn-danger btn-lg btnLength" @click="showModal = false"><i class="fa fa-remove"></i><span> cancel</span></div>
 				    			</div>
 				    		</form>
 				            </slot>
@@ -68,7 +68,6 @@
 				      </div>
 				    </div>
 				  </transition>
-  </modal>
     	</div>
     </section> 
 </div>
@@ -108,6 +107,7 @@ import roleTabs from './roleTabs'
 			addRole: function addRole(roleItems){
 				axios.post('/roleapi', roleItems).then(response=>{
 					this.fetchmethodforrole();
+					this.roleData = '';
 					toastr.success('Item Updated Successfully.', 'Success Alert', {timeOut: 5000});
                 })
 			},
@@ -117,7 +117,13 @@ import roleTabs from './roleTabs'
 					
 			},
 			deleteRole: function deleteRole(id){
-					let a = confirm("asdf");
+					let ok = confirm("are you sure want to delete it ?");
+					if(ok){
+						axios.delete('/roleapi/'+id).then((response)=>{
+						toastr.success('Item Deleted Successfully.', 'Success Alert', {timeOut: 3000});			
+						this.fetchmethodforrole();
+						})
+				}
 			},
 			updateRole: function updateRole(roleid){
 				var tempdata = this.roleForEdit;

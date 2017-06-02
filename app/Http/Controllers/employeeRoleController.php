@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use DB;
 use Illuminate\Http\Request;
-use App\Model\foodCategory;
-use App\Model\foodType;
-use App\Model\food;
+use App\Model\EmpRole;
+use App\Model\Employee;
+use App\Model\Role;
 
-class foodCategoryController extends Controller
+class employeeRoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +16,14 @@ class foodCategoryController extends Controller
      */
     public function index()
     {
-        return foodCategory::orderByDesc('foodCatId')->get();
+        $emprole = new EmpRole();
+        $fetcheddata = $emprole::latest('id')->with(['getEmp' => function($query){
+            $query -> select('id', 'firstName', 'lastName');
+        }])->with(['getRole'=> function($query1){
+            $query1 -> select('id', 'roleName');
+        }])->get();
+        
+        return $fetcheddata;
     }
 
     /**
@@ -27,9 +33,8 @@ class foodCategoryController extends Controller
      */
     public function create()
     {
-        
+        //
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -38,9 +43,14 @@ class foodCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $user = foodType::find(1);
-        $user->foodcategory()->create($request->all());
-            return "sucess";
+
+        $employee = Employee::find($request->employee_id);
+        $employee->roles()->attach($request->role_id);
+        // $result = EmpRole::create($request->all());
+        // if($result != null){
+        //     return "success";
+        // }
+        // return "fialed";
     }
 
     /**
@@ -62,7 +72,7 @@ class foodCategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -72,9 +82,10 @@ class foodCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, foodCategory $foodcategory)
+    public function update(Request $request, $id)
     {
-        return $foodcategory->update($request->all());
+        $result = EmpRole::find($id)->update($request->all());
+       // EmpRole::find($id)->update($request->all());
     }
 
     /**
@@ -83,16 +94,8 @@ class foodCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($foodcatid)
+    public function destroy($id)
     {
-        DB::beginTransaction();
-        $delFoodItem = food::where('foodCatId', $foodcatid)->delete();
-
-        $delFoodCat = foodCategory::where('foodCatId', $foodcatid)->delete();
-        if(!$delFoodCat || !$delFoodCat){
-            DB::rollback();
-        }else{
-            DB::commit();
-        }
+        //
     }
 }

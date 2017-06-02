@@ -10,4 +10,8 @@ class Role extends Model
     public $table = "roles";
     protected $primaryKey = 'id';
     public $timestamps = false;
+
+    public function employees(){
+    	return $this->belongsToMany('App\Model\Employee');
+    }
 }

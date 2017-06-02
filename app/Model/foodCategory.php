@@ -2,7 +2,6 @@
 
 namespace App\Model;
 
-use App\Model\foodType;
 use Illuminate\Database\Eloquent\Model;
 
 class foodCategory extends Model
@@ -15,4 +14,8 @@ class foodCategory extends Model
     public function foodtype(){
     	return $this->belongsTo(foodType::class);
     }
+    public function foods(){
+    	return $this->hasMany(food::class);
+    }
+
 }
